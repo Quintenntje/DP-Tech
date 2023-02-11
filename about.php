@@ -10,7 +10,7 @@ require_once __DIR__ . '/vendor/autoload.php';
 
 $application = new Application();
 $twig = $application->loadTwig();
-$data = $application->getData(Navigation::HOME);
+$data = $application->getData(Navigation::ABOUT);
 
 try {
     echo $twig->render('index.twig', $data);

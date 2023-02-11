@@ -1,0 +1,17 @@
+{
+  "name": "quinten_claes/gip",
+  "autoload": {
+    "psr-4": {
+      "Gip\\": "src/"
+    }
+  },
+  "authors": [
+    {
+      "name": "Quinten Claes",
+      "email": "quintenclaes7@gmail.com"
+    }
+  ],
+  "require": {
+    "twig/twig": "3.5.1"
+  }
+}
