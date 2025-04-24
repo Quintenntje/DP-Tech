@@ -54,7 +54,7 @@
         </li>
           <li>
              <i class="fas fa-phone"></i>
-             <a href="tel:+320496980448"> +32 0496 980 448</a>
+             <a href="tel:+32496980448"> +32 496 980 448</a>
             </li>
           <li>
             <i class="fas fa-envelope"></i>

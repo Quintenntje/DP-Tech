@@ -20,6 +20,10 @@ body {
 body {
   background-color: #333;
 }
+
+a{
+  text-decoration: none;
+}
 ::selection {
   background-color: #ff3366;
   color: white;
