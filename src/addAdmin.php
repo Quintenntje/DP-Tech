@@ -26,8 +26,15 @@ session_start();
 <body>
    
   <?php
- include_once "include/dbh_inc.php";
+ include_once "./include/dbh_inc.php";
  include_once "adminpanel.php";
+
+  $serverName="mysql";
+  $DBUsername ="root";
+  $DBPassword ="root";
+  $DBName="dp-tech";
+
+  $conn = mysqli_connect($serverName, $DBUsername, $DBPassword, $DBName);
 
  if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (isset($_POST['nonadmin'])) {
@@ -56,6 +63,8 @@ session_start();
     echo '</select>';
     echo '<button type="submit" class="admin">Change to Admin</button>';
     echo '</form>';
+ } else{
+    echo '<p>Geen klanten gevonden.</p>';
  }
 
  mysqli_close($conn);

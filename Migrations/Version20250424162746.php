@@ -36,17 +36,17 @@ final class Version20250424162746 extends AbstractMigration
         $table->addColumn('Aankoopdag', 'date');
         $table->setPrimaryKey(['BestellingNummer']);
 
-        // Creating the "inlogklant" table
+
         $table = $schema->createTable('inlogklant');
         $table->addColumn('KlantNummer', 'integer', ['autoincrement' => true]);
         $table->addColumn('Naam', 'string', ['length' => 100]);
-        $table->addColumn('Email', 'string', ['length' => 30]);
+        $table->addColumn('Email', 'string', ['length' => 128]);
         $table->addColumn('Wachtwoord', 'string', ['length' => 128]);
         $table->addColumn('isAdmin', 'boolean', ['default' => 0]);
         $table->setPrimaryKey(['KlantNummer']);
         $table->addIndex(['Email']);
 
-        // Creating the "machines" table
+
         $table = $schema->createTable('machines');
         $table->addColumn('ProductID', 'integer', ['autoincrement' => true]);
         $table->addColumn('Soort', 'string', ['length' => 50]);

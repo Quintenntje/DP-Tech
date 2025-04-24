@@ -1,6 +1,11 @@
 <?php
-include_once('include/dbh_inc.php');
+include_once('./include/dbh_inc.php');
+$serverName="mysql";
+$DBUsername ="root";
+$DBPassword ="root";
+$DBName="dp-tech";
 
+$conn = mysqli_connect($serverName, $DBUsername, $DBPassword, $DBName);
 
 
 $soort = $_POST['Soort'];

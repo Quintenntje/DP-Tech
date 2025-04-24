@@ -19,7 +19,7 @@ final class Version20250424164024 extends AbstractMigration
 
     public function up(Schema $schema): void
     {
-        // Insert into machines
+
         $this->addSql("INSERT INTO machines (ProductID, Soort, Merk, Model, Prijs, Gewicht, Bouwjaar, Aandrijving, Aankoopdag, Hoeveelheid, img_path) VALUES
         (7, 'Heftruck', 'Grendia', 'FG 45', 15000, 4500, '2001', 'Diesel', '2022-12-01', 2, 'images/Machines/FG45.jpg'),
         (8, 'Heftruck', 'Fenwick', 'H30', 13500, 3000, '2001', 'Diesel', '2022-12-01', 1, 'images/Machines/H30.jpg'),
@@ -33,12 +33,12 @@ final class Version20250424164024 extends AbstractMigration
         (27, 'Hoogtewerker', 'JLG', '660SJ', 25900, 12720, '2017', 'Diesel', '2023-05-30', 1, 'images/Machines/660SJ.jpg'),
         (28, 'Hoogtewerker', 'Magni', 'MJP11.5', 25250, 2950, '2023', 'Elektrisch', '2023-02-08', 1, 'images/Machines/MJP11.5.jpg')");
 
-        // Insert into inlogklant (only Quinten + Alessio)
+
         $this->addSql("INSERT INTO inlogklant (KlantNummer, Naam, Email, Wachtwoord, isAdmin) VALUES
         (1, 'Claes Quinten', 'quintenClaes7@gmail.com', '$2y$10$lFn9eVhslUaFkD.R50DizuSJflJghdx4J9P4tzHQBNPF.aa79R/Ei', 1),
         (10, 'Depaepe Alessio', 'alessiodepaepe@gmail.com', '$2y$10$jMA4vTDI4dtSDFN0agPoLOMweQnBkWE94vqbCDafzJqXV.hBkPFX2', 1)");
 
-        // Insert into bestellingen
+
         $this->addSql("INSERT INTO bestellingen (BestellingNummer, KlantNummer, Naam, Email, Postcode, Gemeente, Adres, ProductID, Merk, Model, Prijs, Hoeveelheid, Aankoopdag) VALUES
         (10, 1, 'Claes Quinten', 'quintenClaes7@gmail.com', '9290', 'Ovemere', 'Kleine Tepelstraat 69', 7, 'Grendia', 'FG 45', 15000, 1, '2023-05-27'),
         (12, 4, 'Claes Quinten', 'quintenClaes8@gmail.com', '9290', 'Ovemere', 'Kleine Tepelstraat 69', 6, 'JLG', 'E450AJ', 9000, 1, '2023-05-28'),
