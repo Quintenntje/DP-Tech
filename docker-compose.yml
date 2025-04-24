@@ -1,0 +1,47 @@
+services:
+  nginx:
+    container_name: nginx
+    image: bitnami/nginx:latest
+    ports:
+      - "43000:80"
+      - "443:443"
+    volumes:
+      - ./src:/usr/share/nginx/html
+      - ./docker/nginx/default.conf:/opt/bitnami/nginx/conf/server_blocks/default.conf
+    networks:
+      - dp-tech-net
+    depends_on:
+      - phpfpm
+
+  phpfpm:
+    container_name: phpfpm
+    image: bitnami/php-fpm:latest
+    volumes:
+      - ./src:/usr/share/nginx/html
+    networks:
+      - dp-tech-net
+    depends_on:
+      - mysql
+
+  mysql:
+    container_name: mysql
+    image: mysql:8.0
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: dp-tech
+      MYSQL_USER: rabbit
+      MYSQL_PASSWORD: root
+    ports:
+      - "3306:3306"
+    volumes:
+      - db_data:/var/lib/mysql
+    networks:
+      - dp-tech-net
+
+volumes:
+  db_data:
+
+networks:
+  dp-tech-net:
+    driver: bridge
