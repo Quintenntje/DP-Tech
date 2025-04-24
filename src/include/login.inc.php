@@ -13,6 +13,13 @@ if (isset($_POST['submit'])){
        exit();
     }
 
+    $serverName="mysql";
+    $DBUsername ="root";
+    $DBPassword ="root";
+    $DBName="dp-tech";
+
+    $conn = mysqli_connect($serverName, $DBUsername, $DBPassword, $DBName);
+
     loginUser($conn,$email,$pass);
 
 }

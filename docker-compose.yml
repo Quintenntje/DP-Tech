@@ -15,7 +15,8 @@ services:
 
   phpfpm:
     container_name: phpfpm
-    image: bitnami/php-fpm:latest
+    build:
+      context: ./docker/phpfpm
     volumes:
       - ./src:/usr/share/nginx/html
     networks:

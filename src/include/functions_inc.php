@@ -80,8 +80,6 @@ function emailExists($conn, $email){
     mysqli_stmt_close($stmt);
 }
 
-require_once 'password_compat-master/lib/password.php';
-
 
 function createUser($conn, $voornaam, $name, $email, $pass) {
     $fullName = $voornaam . ' ' . $name; 

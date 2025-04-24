@@ -1,7 +1,7 @@
 <?php
-$serverName="localhost";
+$serverName="mysql";
 $DBUsername ="root";
-$DBPassword ="usbw";
+$DBPassword ="root";
 $DBName="dp-tech";
 
 $conn = mysqli_connect($serverName, $DBUsername, $DBPassword, $DBName);
