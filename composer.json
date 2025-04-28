@@ -2,7 +2,7 @@
     "name": "quint/dp-tech",
     "autoload": {
         "psr-4": {
-            "Quint\\DpTech\\": "src/"
+            "App\\": "app/"
         }
     },
     "authors": [

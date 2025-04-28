@@ -1,13 +1,14 @@
 services:
   nginx:
     container_name: nginx
-    image: bitnami/nginx:latest
+    image: nginx:latest
+    working_dir: /var/www/
     ports:
       - "43000:80"
       - "443:443"
     volumes:
-      - ./src:/usr/share/nginx/html
-      - ./docker/nginx/default.conf:/opt/bitnami/nginx/conf/server_blocks/default.conf
+      - ./src:/var/www
+      - ./docker/nginx:/etc/nginx/conf.d
     networks:
       - dp-tech-net
     depends_on:
@@ -18,7 +19,7 @@ services:
     build:
       context: ./docker/phpfpm
     volumes:
-      - ./src:/usr/share/nginx/html
+      - ./src:/var/www
     networks:
       - dp-tech-net
     depends_on:

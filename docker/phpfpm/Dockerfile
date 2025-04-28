@@ -1,9 +1,11 @@
-FROM bitnami/php-fpm:latest
+FROM php:8.4-fpm
 
-RUN install_packages curl unzip git
 
-RUN curl -sS https://getcomposer.org/installer | php && \
-    mv composer.phar /usr/local/bin/composer \
+RUN APT GET update && \
+    apt-get install -y \
+    git \
+    curl \
+    zip \
+    unzip \
 
-RUN composer require doctrine/migrations
-RUN composer require doctrine/orm
+WORKDIR /var/www/
